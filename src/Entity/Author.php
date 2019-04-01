@@ -39,6 +39,14 @@ class Author
     private $books;
 
     /**
+     * Author constructor.
+     */
+    public function __construct()
+    {
+        $this->books = new ArrayCollection();
+    }
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -93,7 +101,7 @@ class Author
      */
     public function addBook(Book $book): Author
     {
-        if (!$this->books->contains($book)) {
+        if ($this->books && !$this->books->contains($book)) {
             $this->books[] = $book;
             $book->setAuthor($this);
         }

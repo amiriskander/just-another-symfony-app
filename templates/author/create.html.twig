@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Create new author{% endblock %}
+
+{% block body %}
+<h1>Create new author</h1>
+<div class="author-form">
+	{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
+</div>
+<div class="actions">
+	<a href="{{ path("author_list") }}" class="list-author-link">Return to author list</a>
+</div>
+{% endblock %}

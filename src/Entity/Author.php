@@ -109,6 +109,11 @@ class Author
         return $this;
     }
 
+    /**
+     * @param Book $book
+     *
+     * @return Author
+     */
     public function removeBook(Book $book): Author
     {
         if ($this->books->contains($book)) {
